@@ -1,6 +1,7 @@
+#Sample application of pyscaltriangle's functions
 import sys
-sys.path.append("../")
-from pascaltrng_lib.operacions import *
+sys.path.insert(1,"../pyscaltriangle")
+from pyscaltriangle.operations import *
 
 print("-"*50)
 print(f"Pascal's Triangle line 5 is {pascal_line(5)}")

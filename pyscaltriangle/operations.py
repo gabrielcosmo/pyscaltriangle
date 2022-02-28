@@ -1,7 +1,6 @@
 from .mathFormules import binomio
-from .exceptions import TriangleException
+from .exceptions import InexistenceTerm
 #from modules.equationReturn import Equation
-
 
 def triangle_term(a, b, n, p):
     """
@@ -66,14 +65,13 @@ def triangle_term(c,l):
     :param l: Line's number.
     :return: Pascal's Triangle term, know your position in triangle. Type: int
     """
-    line = pascal_line(l)
-    return line[c]
-
-def in_triangle(n):
-    pass #se o termo n existe no triangulo
-
-def fibonacci_sequence(l):
-    pass # soma dos números das diagonais direita-esquerda (0,1,1,2,3,5,8...)
+    term = 0
+    try:
+        term = pascal_line(l)[c]
+    except IndexError as ie:
+        raise InexistenceTerm(ie)
+    else:
+        return term
 
 def line_string(l, string=False):
     """
@@ -99,20 +97,84 @@ def diagonal_tetrahedron(n):
     :param n: Line's number, of where want the  perfect tetrahedron
     :return: The number of column 3, Type: int
     """
-    return pascal_line(n)[3]
+    try:
+        return pascal_line(n)[3]
+    except IndexError as ie:
+        raise InexistenceTerm(ie) 
 
 
-def sierpinski_triangle(r, n):
-    pass # todos os numeros divisiveis por n se destacados formam fractais no triangulo
+def sierpinski_triangle(d, num_lines):
+    """
+    :d: divisor
+    :lines: number of line
+    """
+    sier_tri = []
+    line = []
 
-#Obs: nomes das funções devem ser em letra minuscula e separadas pos _
+    for x in range(0, num_lines): 
+        for y in pascal_line(x):
+            
+            if y % d == 0:
+                line.append(y)
+                
+        sier_tri.append(line.copy())
+        line.clear()
+    return sier_tri
+
+
+    #pass  todos os numeros divisiveis por n se destacados formam fractais no triangulo
+
+def in_triangle(n):
+    """
+    Return True if the number n exists in Triangle.
+    :param n: number
+    :return: boolean  
+    """
+
+    r = False
+    for l in range(1, n + 1):       
+        if(n in pascal_line(l)):
+            r = True
+
+    return r
+
+def fibonacci_sequence(l):
+    pass # soma dos números das diagonais direita-esquerda (0,1,1,2,3,5,8...)
+
+def diagonal(col_init, line_init, length=1, to_rigth=True):
+    """
+    ...
+    :param col_init: first term's column of diagonal
+    :param l: finish first term's line of diagonal
+    :param to_rigth: true if follow to direction rigth-left in the diagonal
+    """
+    c = col_init
+    l = line_init
+    loop = l + length
+    dgn = []
+
+    while l < loop:
+        t = triangle_term(c, l)
+        dgn.append(t)
+
+        if to_rigth:
+            c += 1
+        else:
+            if t == 1 and (loop - l < length): #term equals 1 / finish term of line, and this check is not the first of while loop
+                break
+            else:
+                c -= 1
+        l += 1    
+    
+    return dgn
+
 """
-+Example of Pascal's Triangle :
++Example of Pascal's Triangle:
 column: 0 1 2 3 4 5
 line 0: 1
 line 1: 1 1
 line 2: 1 2 1
 line 3: 1 3 3 1
 line 4: 1 4 6 4 1
-line 5: 1 5 10 10 1
+line 5: 1 5 10 5 1
 """

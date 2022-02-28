@@ -1,0 +1,11 @@
+# Folders
+/.vscode/
+*/__pycache__/
+Lib/
+Include/
+Scripts/
+
+# Files
+*/__init__.py
+*.pyc
+*.cfg
