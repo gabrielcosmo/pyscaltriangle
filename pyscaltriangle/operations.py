@@ -1,6 +1,5 @@
 from .mathFormules import binomio
 from .exceptions import InexistenceTerm
-#from modules.equationReturn import Equation
 
 def triangle_term(a, b, n, p):
     """

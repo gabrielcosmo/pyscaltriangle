@@ -11,6 +11,7 @@ try:
 except:
     print("Receive a number\n")
     size = 5
+    divisor = 2
 
 line_out = ""
 color=False
