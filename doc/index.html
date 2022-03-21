@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyscaltriangle's Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="hamburguer">
+            <div></div>
+            <div></div>
+            <div></div>
+    </div>
+    <aside id="side-bar">
+        
+        <nav id="explorer">
+            <legend>Explorer</legend>
+            <ul>
+                <li type="none"><a href="#pascal_line" class="function">pascal_line</a></li>
+            </ul>
+        </nav>
+
+    </aside>
+
+    <section id="_main">
+
+        <header>
+            <h1>Pyscaltriangle</h1>
+        </header>
+        
+        <main style="display: block;">
+            <section id="describe">
+                <h2>Describe</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe reiciendis optio cum fuga libero neque illum dolor corporis ad enim expedita quaerat, tempore porro labore sequi eaque, quis non sapiente.
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quisquam ab quaerat. Perspiciatis deserunt aperiam quas error in eaque rerum quisquam, quaerat dolores ducimus maxime cum, quia consequuntur recusandae aut! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus nihil pariatur quisquam aspernatur fuga animi itaque autem, necessitatibus error eligendi odit explicabo placeat voluptate sunt nam alias quia eveniet labore?
+                </p>
+            </section>
+
+            <section id="doc">
+                <h2>Methods <span class="file-origin">in operations.py</span></h2>
+
+                <div class="desc-function" id="method1">
+                    <h3 class="title-topic" onclick="ocultContent(this)">pascal_line <span class="param">(num_line)</span></h3>
+                    <div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur cum necessitatibus in, facere, quidem sed tempore sapiente, assumenda voluptates quaerat animi repellat quisquam! Ab rerum veritatis maiores nesciunt? Laboriosam, perspiciatis?
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas non molestiae molestias iusto quos ipsam dolores obcaecati, ad, tempore harum quod, unde id blanditiis sequi recusandae! Quo sequi molestiae est?
+                        </p>
+                        
+                        <label class="file-example">exemplo.py</label>
+                        <pre>
+                        <code class="example">
+    import sys
+    sys.path.insert(1,"../pyscaltriangle")
+    from pyscaltriangle.operations import pascal_line
+    
+    try:
+        size = int(sys.argv[1])
+    except:
+        print("Receive a number\n")
+        size = 5
+    
+    line_out = ""
+    for x in range(0,size+1):
+        line = pascal_line(x)
+        size = len(line)
+    
+        for i, v in enumerate(line):
+            if(i+1 < len(line)):
+                line_out += f"{int(v)} "
+            else:
+                line_out += "1 "
+                print(f"{line_out}")
+                line_out = ""
+    print(" ")
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <!--...-->
+            </section>
+        </main>
+        
+        <footer style="display: block;">
+            <p style="font-style: italic;">&#64;Gabriel Cosmo</p>
+        </footer>
+
+    </section>
+
+    <script src="./script.js"></script>
+    
+</body>
+</html>
