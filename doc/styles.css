@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Metrophobic&display=swap');
 
 body{
     margin: 0%;
@@ -6,21 +7,12 @@ body{
     padding: 0%;
     background-color: #000000e5;
     color: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 90%;
+    font-family: 'Metrophobic', sans-serif;
     text-align: justify;
 
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-}
-
-header{
-    
-}
-
-main{
-
 }
 
 footer{
@@ -42,8 +34,8 @@ aside{
     padding-right: 1vw;
     bottom: 0%;
     height: 100vh;
-    background-color: #0000008c;
-    border-right: 2px solid #ffff005b;
+    background-color: #000000;
+    border-right: 4px solid #ffff005b;
 }
 
 h1, h2{
@@ -67,16 +59,12 @@ h3{
     font-family: monospace;
     border-radius: 10px;
     display: block;
+    border: 2px solid #00000000;
 }
 
 p{
     font-size: auto;
 }
-
-code{
-
-}
-
 /*#region hambuguer-menu*/
 
 div#hamburguer{
@@ -105,7 +93,7 @@ div#hamburguer > div{
 /*#region explorer*/
 nav#explorer{
     margin-top: 10vh;
-    margin-left: 7vh;
+    margin-left: 0vh;
     padding: 1em;
     font-family: monospace;
     font-size: 2vh;
@@ -127,19 +115,20 @@ nav#explorer > ul > li{
     margin-top: 10px;
 }
 
+span#version{
+    color: #ad7100; 
+    padding: 3px;
+    position: fixed; 
+    top: 95%; 
+    left: 1vw; 
+    font-size: 80%;
+}
+
 /*#endregion*/
 
 /*#region main*/
 section#_main{
-    margin: 10vh 16vw 0vh 16vw;
-}
-
-section#describe{
-
-}
-
-section#doc{
-
+    margin: 10vh 10vw 0vh 15vw;
 }
 /*#endregion*/
 
@@ -153,7 +142,11 @@ a.function{
 }
 
 div.desc-funtion{
+    margin-top: 5vh;
+}
 
+div.desc-function > div{
+    margin: auto 2vw;
 }
 
 .file-origin{
@@ -163,39 +156,53 @@ div.desc-funtion{
 code.example{
     padding: 1vh;
     display: flex;
-    border-left: 5px solid orange;
+    border-left: 5px solid rgba(255, 166, 0, 0);
     margin-top: 0vh;
+    font-style: italic;
 
     background-color: #8080801a;
 }
 
-label.file-example{
-    color: #575757;
-    font-weight:bolder;
-    font-style:italic;
-    font-size: 120%;
-    padding: 2vh;
-    display: block;
-    padding-right: 60px 46% auto 46%;
-    text-align: center;
+table.param{
+    margin-top: 1vh;
+    display: inline-table;
+    /*width: 100%;*/
 }
 
-.param{
-    color: #575757;
+table.param > thead  th{
+    background-color: orange;
+    color: #000000;
+    padding: 5px;
 }
+
+table.param > tbody td{
+    border-left: 1px solid orange;
+    padding: 5px;
+    color: #ffffff;
+}
+
+table.param > tbody td:first-child{
+    font-style: italic;
+    font-weight: 400;
+}
+
 /*#endregion*/
 
 /*#region pseudo-classes*/
 h3.title-topic:hover{
     cursor:pointer;
-    background-color: #9eff02;
+    border-color: #ff8000;
 }
 
 code.example:hover{
-    border-width: 7px;
+    border-left-color: orange;
 }
 
 a.function:hover{
     border-left: 3px solid #ffff00;
+}
+
+span#version:hover{
+    border-bottom: 1px solid white;
 }
 /*#endregion*/
