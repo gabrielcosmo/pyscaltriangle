@@ -82,7 +82,7 @@ def line_string(l, string=False):
     if string: return f"{11**l}"
     else: return 11*l
 
-def diagonal_triangle(n):
+def perfect_triangle(n):
     """
     The number of column 2 are perfect triangles
     :param n: Line's number, of where want the  perfect triangle
@@ -90,7 +90,7 @@ def diagonal_triangle(n):
     """
     return pascal_line(n)[2]
 
-def diagonal_tetrahedron(n):
+def perfect_tetrahedron(n):
     """
     The number of column 3 are perfect tetrahedron
     :param n: Line's number, of where want the  perfect tetrahedron
@@ -100,7 +100,6 @@ def diagonal_tetrahedron(n):
         return pascal_line(n)[3]
     except IndexError as ie:
         raise InexistenceTerm(ie) 
-
 
 def sierpinski_triangle(d, num_lines):
     """
@@ -119,9 +118,6 @@ def sierpinski_triangle(d, num_lines):
         sier_tri.append(line.copy())
         line.clear()
     return sier_tri
-
-
-    #pass  todos os numeros divisiveis por n se destacados formam fractais no triangulo
 
 def in_triangle(n):
     """
@@ -175,5 +171,5 @@ line 1: 1 1
 line 2: 1 2 1
 line 3: 1 3 3 1
 line 4: 1 4 6 4 1
-line 5: 1 5 10 5 1
+line 5: 1 5 10 10 5 1
 """

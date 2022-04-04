@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,18 +9,31 @@
 </head>
 <body>
     <div id="hamburguer">
-            <div></div>
-            <div></div>
-            <div></div>
+            <div></div><div></div><div></div>
     </div>
     <aside id="side-bar">
         
         <nav id="explorer">
             <legend>Explorer</legend>
             <ul>
+                <li type="none"><a href="#triangle_term" class="function">triangle_term</a></li>
                 <li type="none"><a href="#pascal_line" class="function">pascal_line</a></li>
-            </ul>
+                <li type="none"><a href="#sum_line_terms" class="function">sum_line_terms</a></li>
+                <li type="none"><a href="#sum_column_terms" class="function">sum_column_terms</a></li>
+                <li type="none"><a href="#sum_diagonal_terms" class="function">sum_diagonal_terms</a></li>
+                <li type="none"><a href="#triangle_term" class="function">triangle_term</a></li>
+                <li type="none"><a href="#line_string" class="function">line_string</a></li>
+                <li type="none"><a href="#perfect_triangle" class="function">perfect_triangle</a></li>
+                <li type="none"><a href="#perfect_tetrahedron" class="function">perfect_tetrahedron</a></li>
+                <li type="none"><a href="#sierpinski_triangle" class="function">sierpinski_triangle</a></li>
+                <li type="none"><a href="#in_triangle" class="function">in_triangle</a></li>
+                <li type="none"><a href="#fibonacci_sequence" class="function">fibonacci_sequence</a></li>
+                <li type="none"><a href="#diagonal" class="function">diagonal</a></li>
+            </ul>       
         </nav>
+        <span id="version">
+                Version: (tag) v0.1
+        </span>
 
     </aside>
 
@@ -32,50 +45,473 @@
         
         <main style="display: block;">
             <section id="describe">
-                <h2>Describe</h2>
+                <h2>Descrição</h2>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe reiciendis optio cum fuga libero neque illum dolor corporis ad enim expedita quaerat, tempore porro labore sequi eaque, quis non sapiente.
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Animi quisquam ab quaerat. Perspiciatis deserunt aperiam quas error in eaque rerum quisquam, quaerat dolores ducimus maxime cum, quia consequuntur recusandae aut! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus nihil pariatur quisquam aspernatur fuga animi itaque autem, necessitatibus error eligendi odit explicabo placeat voluptate sunt nam alias quia eveniet labore?
+                    Conjunto de funções desenvolvidas para a análise do Triângulo de Pascal e suas propriedades particulares.
                 </p>
             </section>
 
             <section id="doc">
-                <h2>Methods <span class="file-origin">in operations.py</span></h2>
-
-                <div class="desc-function" id="method1">
-                    <h3 class="title-topic" onclick="ocultContent(this)">pascal_line <span class="param">(num_line)</span></h3>
+                <h2>Métodos <span class="file-origin">em operations.py</span></h2>
+                
+                <div class="desc-function" id="triangle_term">
+                    <h3 class="title-topic" onclick="ocultContent(this)" >triangle_term</span></h3>
                     <div>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur cum necessitatibus in, facere, quidem sed tempore sapiente, assumenda voluptates quaerat animi repellat quisquam! Ab rerum veritatis maiores nesciunt? Laboriosam, perspiciatis?
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas non molestiae molestias iusto quos ipsam dolores obcaecati, ad, tempore harum quod, unde id blanditiis sequi recusandae! Quo sequi molestiae est?
+                            Retorna um termo especifíco do Triângulo de Pascal, calculado pelo Binômio de Newton.
                         </p>
+
+                        <table class="param">
+                            <thead>
+                                <th>Paramêtro</th>
+                                <th>Descrição</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>a</td>
+                                    <td>Primeiro termo do Binômio de Newton</td>
+                                </tr>
+                                <tr>
+                                    <td>b</td>
+                                    <td>Segundo termo do Binômio de Newton</td>
+                                </tr>
+                                <tr>
+                                    <td>n</td>
+                                    <td>Expoente da equação, também indica a linha na qual está o termo</td>
+                                </tr>
+                                <tr>
+                                    <td>p</td>
+                                    <td>Posição do termo passada para a equação do Binômio de Newton</td>
+                                </tr>
+                            </tbody>
+                        </table>
                         
-                        <label class="file-example">exemplo.py</label>
                         <pre>
                         <code class="example">
-    import sys
-    sys.path.insert(1,"../pyscaltriangle")
-    from pyscaltriangle.operations import pascal_line
+>>  print(triangle_term(2,2,2,3))
+4
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="desc-function" id="pascal_line">
+                    <h3 class="title-topic" onclick="ocultContent(this)">pascal_line</span></h3>
+                    <div>
+                        <p>
+                            Retorna uma linha especifíca do Triângulo de Pascal.
+                        </p>
+
+                        <table class="param">
+                            <thead>
+                                <th>Paramêtro</th>
+                                <th>Descrição</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>num_line</td>
+                                    <td>Número da linha desejada</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <pre>
+                        <code class="example">
+>>  for line in range(0,5):
+    ... print(pascal_line(0))
+1
+1 1
+1 2 1
+1 3 3 1
+1 4 6 4 1
     
-    try:
-        size = int(sys.argv[1])
-    except:
-        print("Receive a number\n")
-        size = 5
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="desc-function" id="sum_line_terms">
+                    <h3 class="title-topic" onclick="ocultContent(this)">sum_line_terms</span></h3>
+                    <div>
+                        <p>
+                            Retorna a soma dos números de uma linha <i>n</i>.
+                        </p>
+
+                        <table class="param">
+                            <thead>
+                                <th>Paramêtro</th>
+                                <th>Descrição</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>n</td>
+                                    <td>Posição da linha</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <pre>
+                        <code class="example">
+>>  sum_line_terms(5)
+24
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="desc-function" id="sum_column_terms">
+                    <h3 class="title-topic" onclick="ocultContent(this)">sum_column_terms</span></h3>
+                    <div>
+                        <p>
+                            Retorna a soma dos números de uma coluna <i>n</i>, até certo número de linhas.
+                        </p>
+
+                        <table class="param">
+                            <thead>
+                                <th>Paramêtro</th>
+                                <th>Descrição</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>col</td>
+                                    <td>Número da coluna</td>
+                                </tr>
+                                <tr>
+                                    <td>lines</td>
+                                    <td>Número da última linha a ser somada</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <pre>
+                        <code class="example">
+>>  sum_column_terms(2,5)
+20    
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="desc-function" id="sum_diagonal_terms">
+                    <h3 class="title-topic" onclick="ocultContent(this)">sum_diagonal_terms</span></h3>
+                    <div>
+                        <p>
+                            Retorna a soma dos números de uma diagonal do Triângulo.
+                        </p>
+
+                        <table class="param">
+                            <thead>
+                                <th>Paramêtro</th>
+                                <th>Descrição</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>col</td>
+                                    <td>Número da coluna do último termo a ser somado</td>
+                                </tr>
+                                <tr>
+                                    <td>line</td>
+                                    <td>Número da linha do último termo a ser somado</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <pre>
+                        <code class="example">
+    >> sum_diagonal_terms(2,4)
+    10
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="desc-function" id="triangle_term">
+                    <h3 class="title-topic" onclick="ocultContent(this)">triangle_term</span></h3>
+                    <div>
+                        <p>
+                            Retorna um termo do Triângulo de Pascal a partir de seus valores de coluna e linha.
+                        </p>
+
+                        <table class="param">
+                            <thead>
+                                <th>Paramêtro</th>
+                                <th>Descrição</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>col</td>
+                                    <td>Número da coluna do termo</td>
+                                </tr>
+                                <tr>
+                                    <td>line</td>
+                                    <td>Número da linha do termo</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <pre>
+                        <code class="example">
+>>  print(triangle_term(1,1))
+1
+>>  print(triangle_term(2,4))
+6
+>>  print(triangle_term(3,4))
+4
     
-    line_out = ""
-    for x in range(0,size+1):
-        line = pascal_line(x)
-        size = len(line)
-    
-        for i, v in enumerate(line):
-            if(i+1 < len(line)):
-                line_out += f"{int(v)} "
-            else:
-                line_out += "1 "
-                print(f"{line_out}")
-                line_out = ""
-    print(" ")
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="desc-function" id="line_string">
+                    <h3 class="title-topic" onclick="ocultContent(this)">line_string</span></h3>
+                    <div>
+                        <p>
+                            Retorna um número que equivale a união dos termos de uma linha do Triângulo.
+                        </p>
+
+                        <table class="param">
+                            <thead>
+                                <th>Paramêtro</th>
+                                <th>Descrição</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>l</td>
+                                    <td>Número da linha do termo</td>
+                                </tr>
+                                <tr>
+                                    <td>string</td>
+                                    <td>Se  <code>True</code>  indica que o valor será retornado como  <code>string</code>, se não é retornado como  <code>int</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <pre>
+                        <code class="example">
+>>  line_string(5, string=False)
+15101051
+>> line_string(2, string=True)
+"121"
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="desc-function" id="perfect_triangle">
+                    <h3 class="title-topic" onclick="ocultContent(this)">perfect_triangle</span></h3>
+                    <div>
+                        <p>
+                           Os números da coluna 2 do Triângulo correspondem a Triângulos perfeitos, obtidos pelo valor da linha em que se encontram.
+                        </p>
+
+                        <table class="param">
+                            <thead>
+                                <th>Paramêtro</th>
+                                <th>Descrição</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>n</td>
+                                    <td>Número da linha em que está o triangulo perfeito</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <pre>
+                        <code class="example">
+>>  col_triangle(4)
+6
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="desc-function" id="perfect_tetrahedron">
+                    <h3 class="title-topic" onclick="ocultContent(this)">perfect_tetrahedron</span></h3>
+                    <div>
+                        <p>
+                           Os números da coluna 3 do Triângulo correspondem a Tetraedros perfeitos, que podem ser obtidos pelo valor da linha em que se encontra.
+                        </p>
+
+                        <table class="param">
+                            <thead>
+                                <th>Paramêtro</th>
+                                <th>Descrição</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>n</td>
+                                    <td>Número da linha do termo</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <pre>
+                        <code class="example">
+>>  col_tetrahedron(10)
+120
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="desc-function" id="sierpinski_triangle">
+                    <h3 class="title-topic" onclick="ocultContent(this)">sierpinski_triangle</span></h3>
+                    <div>
+                        <p>
+                           Números de mesmo divisor, destacados no Triângulo, formam padrões de fractais. Este objeto é conhecido como <i>Triângulo de Sierpinski</i>. <br> Passando um número qualquer é retornada uma lista contendo os seus múltiplos, até certo número de linhas. 
+                        </p>
+
+                        <table class="param">
+                            <thead>
+                                <th>Paramêtro</th>
+                                <th>Descrição</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>d</td>
+                                    <td>Divisor</td>
+                                </tr>
+                                <tr>
+                                    <td>num_lines</td>
+                                    <td>Quantidade de linhas a serem filtradas</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <pre>
+                        <code class="example">#Retirado do exemplo em tests/demo3.py
+import sys
+sys.path.insert(1,"../pyscaltriangle")
+from pyscaltriangle.operations import pascal_line
+
+try:
+    size = int(sys.argv[1])     #triangle's size
+    divisor = int(sys.argv[2])  #divisor for number in emphasis
+except:
+    print("Receive a number\n")
+    size = 5
+    divisor = 2
+
+line_out = ""
+color=False
+for x in range(0, size+1):
+    line = pascal_line(x)
+    size = len(line)
+
+    for i, v in enumerate(line):
+        if(i+1 < len(line)):       
+
+        if int(v) % divisor == 0:
+            line_out += f"\033[1;36m{int(v)}\033[m "
+        else:
+            line_out += f"{int(v)} "
+        else:
+        line_out += "1 "
+        print(f"{line_out}")
+        line_out = ""
+print(" ")
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="desc-function" id="in_triangle">
+                    <h3 class="title-topic" onclick="ocultContent(this)">in_triangle</span></h3>
+                    <div>
+                        <p>
+                           Retorna <code>True</code> se o termo/argumento foi encontrado no Triângulo.
+                        </p>
+
+                        <table class="param">
+                            <thead>
+                                <th>Paramêtro</th>
+                                <th>Descrição</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>n</td>
+                                    <td>Número a ser verificado</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <pre>
+                        <code class="example">
+>>  in_triangle(84)
+True
+>> in_triangle(0)
+False
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="desc-function" id="fibonacci_sequence">
+                    <h3 class="title-topic" onclick="ocultContent(this)">fibonacci_sequence <span style="color: #2a2a2a;">| por implementar</span></span></h3>
+                    <div>
+                        <p>
+                           Retorna a seuquência de Fibonacci a partir da localização de seus termos no Triângulo. <br> As somas das diagonais, no sentido direita-esquerda produzem números da seuquência de Fibonacci.
+                        </p>
+
+                        <table class="param">
+                            <thead>
+                                <th>Paramêtro</th>
+                                <th>Descrição</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>...</td>
+                                    <td>...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <pre>
+                        <code class="example">
+>>  ...
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                <div class="desc-function" id="diagonal">
+                    <h3 class="title-topic" onclick="ocultContent(this)">diagonal</h3>
+                    <div>
+                        <p>
+                           Retorna uma diagonal do Triângulo de Pascal.
+                        </p>
+
+                        <table class="param">
+                            <thead>
+                                <th>Paramêtro</th>
+                                <th>Descrição</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>col_init</td>
+                                    <td>Número da coluna do termo inical da diagonal considerada</td>
+                                </tr>
+                                <tr>
+                                    <td>line_init</td>
+                                    <td>Número da linha do termo inicial da diagonal considerada</td>
+                                </tr>
+                                <tr>
+                                    <td>length</td>
+                                    <td>Tamanho da diagonal / Quantidade de termos</td>
+                                </tr>
+                                <tr>
+                                    <td>to_rigth</td>
+                                    <td>Se True, a diagonal se inicia a partir da esquerda para a direita</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <pre>
+                        <code class="example">
+>>  diagonal(0, 1, 4, True)
+[1, 2, 3, 4]
                             </code>
                         </pre>
                     </div>
@@ -85,7 +521,7 @@
         </main>
         
         <footer style="display: block;">
-            <p style="font-style: italic;">&#64;Gabriel Cosmo</p>
+            <p style="font-style: italic;">&#64;gabrielcosmo</p>
         </footer>
 
     </section>
