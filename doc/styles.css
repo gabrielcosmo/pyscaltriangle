@@ -1,13 +1,26 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css2?family=Metrophobic&display=swap');
 
+:root{
+    --main-color: yellow;
+    --second-color: orange;
+    --background: #000000e5;
+    --main-font: 'Metrophobic', sans-serif;
+}
+
+*::selection{
+    color: black;
+    background-color: var(--main-color);
+    font-weight: bold;
+}
+
 body{
     margin: 0%;
     margin-top: 0%;
     padding: 0%;
     background-color: #000000e5;
     color: #ffffff;
-    font-family: 'Metrophobic', sans-serif;
+    font-family: var(--main-font);
     text-align: justify;
 
     display: flex;
@@ -53,7 +66,7 @@ h2{
 }
 
 h3{
-    background-color: #fffb00;
+    background-color: var(--main-color);
     color: black;
     padding: 1vh;
     font-family: monospace;
@@ -85,7 +98,7 @@ div#hamburguer{
 div#hamburguer > div{
     padding: 10% 50%;
     margin: 5% 0px;
-    background-color: yellow;
+    background-color: var(--main-color);
 }
 
 /*#endregion*/
@@ -137,7 +150,7 @@ a.function{
     padding-left: 5px;
     font-family: monospace;
     text-decoration: none;
-    color: yellow;
+    color: var(--main-color);
     border-left: 3px solid #ffff0000;
 }
 
@@ -170,13 +183,13 @@ table.param{
 }
 
 table.param > thead  th{
-    background-color: orange;
+    background-color: var(--second-color);
     color: #000000;
     padding: 5px;
 }
 
 table.param > tbody td{
-    border-left: 1px solid orange;
+    border-left: 1px solid var(--second-color);
     padding: 5px;
     color: #ffffff;
 }
@@ -188,6 +201,13 @@ table.param > tbody td:first-child{
 
 /*#endregion*/
 
+/*#region classes*/
+.contrast{
+    border-bottom: 1px dashed var(--main-color);
+}
+
+/*#endregion*/
+
 /*#region pseudo-classes*/
 h3.title-topic:hover{
     cursor:pointer;
@@ -195,11 +215,11 @@ h3.title-topic:hover{
 }
 
 code.example:hover{
-    border-left-color: orange;
+    border-left-color: var(--second-color);
 }
 
 a.function:hover{
-    border-left: 3px solid #ffff00;
+    border-left: 3px solid var(--main-color);
 }
 
 span#version:hover{
